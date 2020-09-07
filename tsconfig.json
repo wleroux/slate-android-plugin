@@ -1,0 +1,21 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strict": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "esnext",
+    "lib": ["es5", "es6", "dom"],
+    "rootDir": "./src",
+    "isolatedModules": true,
+    "outDir": "dist/esm",
+    "incremental": false
+  },
+  "references": []
+}
