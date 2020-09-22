@@ -8,7 +8,7 @@ import {CompositionManager} from "./composition-manager";
  *
  * @param {Editor} editor
  */
-export function useComposition(editor: ReactEditor): ReactEditor {
+export function useAndroidPlugin<T extends ReactEditor>(editor: T): T {
   let compositionManager = useMemo(() => new CompositionManager(editor), [editor]);
   useLayoutEffect(() => {
     compositionManager.connect();

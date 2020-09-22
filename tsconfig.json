@@ -11,7 +11,7 @@
     "strict": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "esnext",
-    "lib": ["es5", "es6", "dom"],
+    "lib": ["es5", "es6", "dom", "ESNext"],
     "rootDir": "./src",
     "isolatedModules": true,
     "outDir": "dist/esm",

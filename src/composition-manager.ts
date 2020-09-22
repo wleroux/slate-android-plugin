@@ -48,10 +48,12 @@ export class CompositionManager {
         const textDiff = diffText(prevText, nextText)
         if (textDiff !== null) {
           const path = ReactEditor.findPath(this.editor, node)
-          Transforms.insertText(this.editor, textDiff.insertText, {at: {
-            anchor: {path, offset: textDiff.start},
-            focus: {path, offset: textDiff.end}
-          }})
+          setTimeout(() => {
+            Transforms.insertText(this.editor, textDiff.insertText, {at: {
+                anchor: {path, offset: textDiff.start},
+                focus: {path, offset: textDiff.end}
+              }});
+          }, 20);
         }
       }
     }

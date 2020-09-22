@@ -1,13 +1,16 @@
 {
   "name": "slate-android-plugin",
-  "description": "A plugin to add support for Android devices",
-  "version": "0.58.3",
+  "description": "Android support for rich text editors based on slate",
+  "version": "0.0.2",
   "license": "MIT",
-  "repository": "git://github.com/wleroux/slate-android-plugin.git",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wleroux/slate-android-plugin.git"
+  },
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "main:src": "src/index.ts",
+  "module": "dist/esm/index.js",
   "files": [
     "dist/"
   ],
@@ -15,8 +18,7 @@
     "prepare": "npm run build",
     "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "react": ">=16.8.0",
     "@types/react": "^16.9.49",
@@ -32,17 +34,12 @@
     "slate-react": ">=0.55.0"
   },
   "umdGlobals": {
-    "slate": "Slate",
-    "slate-react": "SlateReact"
+    "react": "React",
+    "slate": "Slate"
   },
   "keywords": [
+    "android",
     "editor",
-    "history",
-    "operation",
-    "redo",
-    "save",
-    "slate",
-    "stack",
-    "undo"
+    "slate"
   ]
 }
