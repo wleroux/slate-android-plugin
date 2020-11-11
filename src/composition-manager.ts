@@ -41,19 +41,22 @@ export class CompositionManager {
       const domNode = mutation.target.parentNode!
       const node = ReactEditor.toSlateNode(this.editor, domNode)
       const prevText = node.text! as string
-      const nextText = domNode.textContent!
+      let nextText = domNode.textContent!
+
+      // textContent will pad an extra \n when the textContent ends with an \n
+      if (nextText.endsWith("\n")) {
+        nextText = nextText.slice(0, nextText.length - 1);
+      }
 
       // If the text is no different, there is no diff.
       if (nextText !== prevText) {
         const textDiff = diffText(prevText, nextText)
         if (textDiff !== null) {
           const path = ReactEditor.findPath(this.editor, node)
-          setTimeout(() => {
-            Transforms.insertText(this.editor, textDiff.insertText, {at: {
-                anchor: {path, offset: textDiff.start},
-                focus: {path, offset: textDiff.end}
-              }});
-          }, 20);
+          Transforms.insertText(this.editor, textDiff.insertText, {at: {
+            anchor: {path, offset: textDiff.start},
+            focus: {path, offset: textDiff.end}
+          }});
         }
       }
     }

@@ -1,7 +1,7 @@
 {
   "name": "slate-android-plugin",
   "description": "Android support for rich text editors based on slate",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "repository": {
     "type": "git",
